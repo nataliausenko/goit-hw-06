@@ -73,15 +73,35 @@ color: currentColor;
     overflow: hidden;
 }
 
-.container{
-width: 1158px;
-margin-left: auto;
-margin-right: auto;
-padding-left: 15px;
-padding-right: 15px;
-/* outline: 2px solid red; */
+/* Mobile */ 
 
+.container {
+    min-width: 320px;
+    max-width: 428px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    outline: 2px solid red;
 }
+
+/* Tablet screen */
+@media only screen and (min-width: 768px){
+.container{
+max-width: 768px;
+}
+}
+
+/* Desktop screen */
+@media only screen and (min-width: 1158px) {
+.container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    }
+}
+
 
 body{
 margin: 0;
@@ -236,50 +256,145 @@ background-color: var(--active-color);
 /* section styles */
 
 
-/* section 2 advantages */
+/**
+  |============================
+  | section 2 advantages
+  |============================
+*/
 
-.advantages-icons-cards{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--advantages-icons-bg-color);
-    width: 264px;
-    height: 112px;
-    margin-bottom: 8px;
-    border-radius: 4px;
+
+/* mobile+tablet */
+.section-advantages-style {
+    padding: 96px 0;
 }
-
-/* .advantages-icons{
+/* desktop */
+@media only screen and (min-width: 1158px) {
    
-} */
+    .section-advantages-style {
+            padding: 120px 0;
+        }
+  
+}
 
-.advantages-list{
+
+/* mobile */
+.advantages-list {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    gap:24px;
+    align-items: center;
+    row-gap: 72px;
+    }
+
+/* tablet */
+@media only screen and (min-width: 768px) {
+   
+    .advantages-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            row-gap: 72px;
+            column-gap: 24px;
 }
-.advantages-list-card{
-    width: calc((100% - 72px) / 4);
 }
+
+/* tablet*/
+@media only screen and (min-width: 1158px) {
+  .advantages-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 24px;
+  } 
+}
+
+
+/* Icons advantages */
+.advantages-icons-cards{
+    display: none;
+}
+
+@media only screen and (min-width: 1158px) {
+.advantages-icons-cards{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--advantages-icons-bg-color);
+      width: 264px;
+      height: 112px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+    }
+}
+
+
+
+
+   .advantages-list-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      } 
+
+
+@media only screen and (min-width: 768px) {
+.advantages-list-card {
+        width: calc((100% - 24px) / 2);
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (min-width: 1158px) {
+  .advantages-list-card{
+      width: calc((100% - 72px) / 4);
+  } 
+}
+
+
+
+  .advantages-list-card .card-titles {
+      font-size: 36px;
+      margin-bottom: 8px;
+  }
+
+
+@media only screen and (min-width: 1158px) {
+   
 .advantages-list-card .card-titles{
 margin-bottom: 8px;
+font-size: 20px; }
 }
 
 
 
+/**
+  |============================
+  | Section 3 What are we doing
+  |============================
+*/
+
+/* mobile+tablet */
+
+@media only screen and (max-width: 1158px) {
+  .section-what-style{
+      display: none;
+  } 
+    
+}
+
+/* desktop */
+.section-what-style {
+        padding-top: 0px;
+        padding-bottom: 120px;
+    }
 
 
+    
 .title-what-are{
 margin-bottom: 72px;
 }
-.section-advantages-style{
-    padding:120px 0;
-}
 
-.section-what-style{
-padding-top: 0px;
-padding-bottom: 120px;
-}
 .list-img-what{
 display: flex;
 gap:24px;
@@ -293,21 +408,60 @@ gap:24px;
 }
 
 
-/* section Team */
+
+
+/**
+  |============================
+  | section Team
+  |============================
+*/
+
 .title-team{
     margin-bottom: 72px;
 }
 
 .team-list{
     display: flex;
-    gap:24px;
+    align-items: center;
+    justify-content: center;
+    row-gap:72px;
     flex-wrap: wrap;
 }
 
-.team-list .card{
-width: calc((100%-3*24px)/4);
-border-radius: 0px 0px 4px 4px;
+@media only screen and (min-width:768px) {
+.team-list {
+        row-gap: 64px;
+        column-gap: 24px;
+    }
 }
+
+@media only screen and (min-width: 1158px) {
+.team-list {
+        /* gap: 24px; */
+    }
+}
+
+
+
+@media only screen and (min-width: 768px) {
+.team-list .card {
+        width: calc((100%-24px)/2);
+        border-radius: 0px 0px 4px 4px;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 1158px) {
+.team-list .card {
+        width: calc((100%-3*24px)/4);
+        border-radius: 0px 0px 4px 4px;
+    }
+}
+
+
+
 
 .card-titles.team {
     text-align: center;
@@ -384,9 +538,18 @@ letter-spacing: 0.02em;
 
 .section-team-style{
     background-color: var(--light-section-color);
-    padding-top: 120px;
-        padding-bottom: 120px;
+    padding-top: 96px;
+        padding-bottom: 96px;
 }
+
+@media only screen and (min-width: 1158px) {
+.section-team-style {
+        background-color: var(--light-section-color);
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+}
+
 /* section buttons */
 .section-buttons{
     font-family: "Roboto",sans-serif;
@@ -453,18 +616,38 @@ width: calc((100% - 48px) / 3);
 
 /* Section 5 Customers*/
 .section-customers-style{
-    padding: 120px 0;
+    padding: 96px 0;
+}
+
+@media only screen and (min-width: 1158px) {
+.section-customers-style {
+        padding: 120px 0;
+    }
 }
 
 .title-customers{
 margin-bottom: 72px;
 }
-.customers-list{
-display: flex;
-justify-content: center;
-align-items: center;
-gap:24px;
+
+/* mobile */
+@media only screen and (min-width: 428px) {
+    .customers-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            column-gap: 16px;
+            row-gap: 72px;
+        }
 }
+
+/* tablet+desktop */
+@media only screen and (min-width: 768px) {
+    .customers-list {
+        column-gap: 24px;
+    }
+}
+
 .customers-icons{
   fill: currentColor;  
   }
@@ -908,4 +1091,3 @@ top: 0;
 .projects-links:hover .overlay-description{
 transform: translateY(0%);
 }
-
